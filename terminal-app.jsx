@@ -28,14 +28,14 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
 const ROUTES = {
   home:       { label: { pt: "início",       en: "home" },        file: "home.md",         pre: "01", section: "ROOT" },
   about:      { label: { pt: "sobre",        en: "about" },       file: "about.md",        pre: "02", section: "ROOT" },
-  experience: { label: { pt: "experiência",  en: "experience" },  file: "experience.json", pre: "03", section: "WORK" },
-  projects:   { label: { pt: "projetos",     en: "projects" },    file: "projects/",       pre: "04", section: "WORK" },
-  skills:     { label: { pt: "stack",        en: "stack" },       file: "skills.yml",      pre: "05", section: "ROOT" },
-  education:  { label: { pt: "formação",     en: "education" },   file: "education.md",    pre: "06", section: "ROOT" },
-  me:         { label: { pt: "em código",    en: "in code" },     file: "me.js",           pre: "07", section: "EXTRA" },
-  github:     { label: { pt: "github",       en: "github" },      file: "github.stats",    pre: "08", section: "EXTRA" },
-  playground: { label: { pt: "playground",   en: "playground" },  file: "playground.sh",   pre: "09", section: "EXTRA" },
-  contact:    { label: { pt: "contato",      en: "contact" },     file: "contact.json",    pre: "10", section: "ROOT" },
+  skills:     { label: { pt: "stack",        en: "stack" },       file: "skills.yml",      pre: "03", section: "ROOT" },
+  education:  { label: { pt: "formação",     en: "education" },   file: "education.md",    pre: "04", section: "ROOT" },
+  contact:    { label: { pt: "contato",      en: "contact" },     file: "contact.json",    pre: "05", section: "ROOT" },
+  experience: { label: { pt: "experiência",  en: "experience" },  file: "experience.json", pre: "06", section: "WORK" },
+  projects:   { label: { pt: "projetos",     en: "projects" },    file: "projects/",       pre: "07", section: "WORK" },
+  me:         { label: { pt: "em código",    en: "in code" },     file: "me.js",           pre: "08", section: "EXTRA" },
+  github:     { label: { pt: "github",       en: "github" },      file: "github.stats",    pre: "09", section: "EXTRA" },
+  playground: { label: { pt: "playground",   en: "playground" },  file: "playground.sh",   pre: "10", section: "EXTRA" },
 };
 
 function parseHash() {

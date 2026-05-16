@@ -158,9 +158,9 @@ window.CV = {
 
   education: [
     {
-      title: { pt: "Bacharelado em Ciências Matemáticas e da Terra", en: "B.Sc. in Mathematical and Earth Sciences" },
-      school: { pt: "Universidade Federal do Rio de Janeiro (UFRJ)", en: "Federal University of Rio de Janeiro (UFRJ)" },
-      period: { pt: "2021 — Presente", en: "2021 — Present" },
+      title: { pt: "Bacharelado em Ciência da Computação", en: "B.Sc. in Computer Science" },
+      school: { pt: "Universidade Veiga de Almeida (UVA)", en: "Universidade Veiga de Almeida (UVA)" },
+      period: { pt: "2025 — Presente", en: "2025 — Present" },
     },
     {
       title: { pt: "Lógica de Programação em Python", en: "Programming Logic in Python" },

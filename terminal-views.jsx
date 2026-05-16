@@ -95,8 +95,8 @@ function ViewAbout({ lang, cv }) {
         </p>
         <p>
           {lang === "pt"
-            ? "Venho da matemática — meu curso na UFRJ me ensinou a pensar em invariantes e provas, e isso virou um hábito de programar pensando em garantias, não em felizes acidentes. Comecei a codar dando aula de Python, e ensinar lógica me obrigou a entender de verdade o que eu pensava que sabia."
-            : "I come from mathematics — my UFRJ degree taught me to think in invariants and proofs, and that became a habit of coding for guarantees, not for happy accidents. I started programming by teaching Python, and explaining logic forced me to actually understand what I thought I knew."}
+            ? "Comecei a codar dando aula de Python na UFRJ, e ensinar lógica me obrigou a entender de verdade o que eu pensava que sabia. Hoje curso Ciência da Computação na UVA, consolidando a base teórica que já aplico no dia a dia."
+            : "I started programming by teaching Python at UFRJ, and explaining logic forced me to actually understand what I thought I knew. I'm currently studying Computer Science at UVA, building the theoretical foundation I already apply daily."}
         </p>
 
         <h3>{lang === "pt" ? "O que eu gosto de fazer" : "What I like to do"}</h3>
@@ -227,11 +227,11 @@ function ViewEducation({ lang, cv }) {
   return (
     <div className="view">
       <div className="eyebrow"><span className="num">05</span><span>{lang === "pt" ? "Formação" : "Education"}</span><span className="rule"/></div>
-      <h2 className="section-title">UFRJ.</h2>
+      <h2 className="section-title">UVA.</h2>
       <p className="section-lede">
         {lang === "pt"
-          ? "Universidade Federal do Rio de Janeiro — uma graduação em matemática que virou um curso prático em código."
-          : "Federal University of Rio de Janeiro — a math degree that turned into a practical course in code."}
+          ? "Universidade Veiga de Almeida — Bacharelado em Ciência da Computação, iniciado em 2026."
+          : "Universidade Veiga de Almeida — B.Sc. in Computer Science, started in 2026."}
       </p>
 
       <div>
