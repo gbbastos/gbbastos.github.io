@@ -21,13 +21,13 @@ window.CV = {
   },
 
   tagline: {
-    pt: "Confiável, técnico e criativo. Construo backends, crawlers e automações que rodam em produção.",
-    en: "Reliable, technical and creative. I build backends, crawlers and automations that ship to production.",
+    pt: "Backend e automação com Python e C#. Sistemas que integram, coletam e entregam em produção.",
+    en: "Backend and automation with Python and C#. Systems that integrate, collect and deliver in production.",
   },
 
   summary: {
-    pt: "Desenvolvedor backend e engenheiro de automação com experiência em Python e C#/.NET, focado em web scraping, crawling e workflows de automação. Mantenho e escalo uma frota de 100+ sistemas de automação em produção. Integro APIs REST, opero MongoDB e SQL, e faço deploys em Windows Server.",
-    en: "Backend developer and automation engineer with hands-on experience in Python and C#/.NET, specializing in web scraping, crawling and automation workflows. I maintain and scale a fleet of 100+ production automation systems. I integrate REST APIs, operate MongoDB and SQL, and deploy to Windows Server.",
+    pt: "Desenvolvedor backend e engenheiro de automação com experiência em Python e C#/.NET, focado em web scraping, crawling e workflows de automação. Mantenho sistemas de automação em produção, integro APIs REST, opero MongoDB e SQL, e faço deploys em Windows Server.",
+    en: "Backend developer and automation engineer with hands-on experience in Python and C#/.NET, specializing in web scraping, crawling and automation workflows. I maintain production automation systems, integrate REST APIs, operate MongoDB and SQL, and deploy to Windows Server.",
   },
 
   nav: {
@@ -43,7 +43,7 @@ window.CV = {
       period: { pt: "Jan 2025 — Presente", en: "Jan 2025 — Present" },
       bullets: {
         pt: [
-          "Mantenho e estabilizo uma frota de 100+ crawlers e automações em produção com C#/.NET e Selenium.",
+          "Mantenho e estabilizo crawlers e automações em produção com C#/.NET e Selenium.",
           "Desenvolvo novos workflows de automação integrando APIs REST e pipelines HTTP.",
           "Automação de browser com Selenium e Playwright para sites dinâmicos e JS-heavy.",
           "Deploy e monitoramento de processos .NET (DLLs) em Windows Server.",
@@ -51,7 +51,7 @@ window.CV = {
           "Monitoramento de filas RabbitMQ para integridade dos pipelines.",
         ],
         en: [
-          "Maintain and stabilize a production fleet of 100+ crawlers and automations built with C#/.NET and Selenium.",
+          "Maintain and stabilize production crawlers and automations built with C#/.NET and Selenium.",
           "Develop new automation workflows integrating REST APIs and HTTP-based pipelines.",
           "Browser automation with Selenium and Playwright for dynamic and JS-heavy websites.",
           "Deploy and monitor .NET DLL processes on Windows Server in production.",
@@ -82,7 +82,7 @@ window.CV = {
     },
     {
       role: { pt: "Instrutor & Monitor de Lógica de Programação", en: "Programming Logic Instructor & Teaching Assistant" },
-      company: "Federal University of Rio de Janeiro (UFRJ)",
+      company: { pt: "Universidade Federal do Rio de Janeiro (UFRJ)", en: "Federal University of Rio de Janeiro (UFRJ)" },
       where: { pt: "Rio de Janeiro", en: "Rio de Janeiro" },
       period: { pt: "2020 — 2022", en: "2020 — 2022" },
       bullets: {
@@ -159,12 +159,12 @@ window.CV = {
   education: [
     {
       title: { pt: "Bacharelado em Ciências Matemáticas e da Terra", en: "B.Sc. in Mathematical and Earth Sciences" },
-      school: "Federal University of Rio de Janeiro (UFRJ)",
+      school: { pt: "Universidade Federal do Rio de Janeiro (UFRJ)", en: "Federal University of Rio de Janeiro (UFRJ)" },
       period: { pt: "2021 — Presente", en: "2021 — Present" },
     },
     {
       title: { pt: "Lógica de Programação em Python", en: "Programming Logic in Python" },
-      school: "Federal University of Rio de Janeiro (UFRJ)",
+      school: { pt: "Universidade Federal do Rio de Janeiro (UFRJ)", en: "Federal University of Rio de Janeiro (UFRJ)" },
       period: { pt: "2019", en: "2019" },
     },
   ],
@@ -174,20 +174,18 @@ window.CV = {
     { name: { pt: "Inglês", en: "English" }, level: { pt: "Profissional", en: "Professional" }, pct: 80 },
   ],
 
-  // Fake-but-realistic GitHub stats so the embed doesn't depend on a live API
   gh: {
-    public_repos: 18,
-    followers: 24,
-    following: 31,
-    stars: 27,
-    contributions_last_year: 612,
+    public_repos: 5,
+    followers: 0,
+    following: 0,
+    stars: 0,
+    contributions_last_year: 28,
     top_languages: [
-      { name: "Python", pct: 42, color: "#3572A5" },
-      { name: "C#",     pct: 38, color: "#178600" },
-      { name: "JavaScript", pct: 11, color: "#f1e05a" },
-      { name: "HTML",   pct: 6,  color: "#e34c26" },
-      { name: "Other",  pct: 3,  color: "#888" },
+      { name: "Python",     pct: 40, color: "#3572A5" },
+      { name: "C#",         pct: 40, color: "#178600" },
+      { name: "TypeScript", pct: 12, color: "#3178c6" },
+      { name: "JavaScript", pct: 8,  color: "#f1e05a" },
     ],
-    streak_weeks: 14,
+    streak_weeks: 1,
   },
 };

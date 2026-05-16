@@ -5,15 +5,21 @@ const { useState, useEffect, useRef, useMemo } = React;
 const fmtN = (n) => n.toLocaleString("en-US");
 
 function buildHeat() {
+  // Real contribution data from GitHub API (last 12 months)
+  const realWeeks = Array.from({ length: 53 }, () => Array(7).fill(0));
+  // Week 52 (last week): Thu=17, Fri=11
+  realWeeks[52][4] = 17;
+  realWeeks[52][5] = 11;
+
   const cells = [];
-  let seed = 7;
-  const rng = () => { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; };
   for (let w = 0; w < 53; w++) {
     for (let d = 0; d < 7; d++) {
-      const base = w / 53;
-      const v = rng() + base * 0.6;
+      const count = realWeeks[w][d];
       let lvl = 0;
-      if (v > 0.45) lvl = 1; if (v > 0.75) lvl = 2; if (v > 1.0) lvl = 3; if (v > 1.2) lvl = 4;
+      if (count > 0)  lvl = 1;
+      if (count >= 5) lvl = 2;
+      if (count >= 10) lvl = 3;
+      if (count >= 15) lvl = 4;
       cells.push({ w, d, lvl });
     }
   }
@@ -124,7 +130,7 @@ function ViewExperience({ lang, cv }) {
             </div>
             <div>
               <h3>{t(x.role)}</h3>
-              <div className="at">at <b>{x.company}</b></div>
+              <div className="at">{lang === "pt" ? "em" : "at"} <b>{t(x.company)}</b></div>
               <ul>{x.bullets[lang].map((b, j) => <li key={j}>{b}</li>)}</ul>
               <div className="stack">{x.stack.map((s) => <span key={s} className="tag-pill">{s}</span>)}</div>
             </div>
@@ -224,7 +230,7 @@ function ViewEducation({ lang, cv }) {
       <h2 className="section-title">UFRJ.</h2>
       <p className="section-lede">
         {lang === "pt"
-          ? "Federal University of Rio de Janeiro — uma graduação em matemática que virou um curso prático em código."
+          ? "Universidade Federal do Rio de Janeiro — uma graduação em matemática que virou um curso prático em código."
           : "Federal University of Rio de Janeiro — a math degree that turned into a practical course in code."}
       </p>
 
@@ -236,7 +242,7 @@ function ViewEducation({ lang, cv }) {
             </div>
             <div>
               <h3>{t(e.title)}</h3>
-              <div className="at">at <b>{e.school}</b></div>
+              <div className="at">{lang === "pt" ? "em" : "at"} <b>{t(e.school)}</b></div>
             </div>
           </article>
         ))}
@@ -296,11 +302,11 @@ function ViewGitHub({ lang, cv }) {
       </h2>
 
       <div className="gh-grid">
-        <div className="cell"><div className="k">Repos</div><div className="v">{cv.gh.public_repos}</div></div>
-        <div className="cell"><div className="k">Stars</div><div className="v">{cv.gh.stars}</div></div>
+        <div className="cell"><div className="k">{lang === "pt" ? "Repos" : "Repos"}</div><div className="v">{cv.gh.public_repos}</div></div>
+        <div className="cell"><div className="k">{lang === "pt" ? "Estrelas" : "Stars"}</div><div className="v">{cv.gh.stars}</div></div>
         <div className="cell"><div className="k">{lang === "pt" ? "Seguidores" : "Followers"}</div><div className="v">{cv.gh.followers}</div></div>
         <div className="cell"><div className="k">{lang === "pt" ? "Contribs/ano" : "Contribs/yr"}</div><div className="v">{fmtN(cv.gh.contributions_last_year)}</div></div>
-        <div className="cell"><div className="k">Streak</div><div className="v">{cv.gh.streak_weeks}<small>w</small></div></div>
+        <div className="cell"><div className="k">{lang === "pt" ? "Sequência" : "Streak"}</div><div className="v">{cv.gh.streak_weeks}<small>w</small></div></div>
       </div>
 
       <h3 style={{ fontFamily: "var(--t-sans)", fontSize: 17, fontWeight: 600, letterSpacing: "-0.005em", margin: "0 0 16px", color: "var(--t-text)" }}>
@@ -351,9 +357,9 @@ function ViewMe({ lang, cv }) {
 {"  "}<span className="prop">location</span><span className="punc">:</span> <span className="str">"{cv.meta.location[lang]}"</span><span className="punc">,</span>{"\n"}
 {"  "}<span className="prop">languages</span><span className="punc">:</span> <span className="punc">[</span><span className="str">"Python"</span><span className="punc">,</span> <span className="str">"C#"</span><span className="punc">],</span>{"\n"}
 {"  "}<span className="prop">currentlyBuilding</span><span className="punc">:</span> <span className="punc">[</span>{"\n"}
-{"    "}<span className="str">"production crawlers @ scale"</span><span className="punc">,</span>{"\n"}
+{"    "}<span className="str">"{lang === "pt" ? "crawlers em produção" : "production crawlers"}"</span><span className="punc">,</span>{"\n"}
 {"    "}<span className="str">"REST APIs (FastAPI + ASP.NET Core)"</span><span className="punc">,</span>{"\n"}
-{"    "}<span className="str">"automation workflows"</span>{"\n"}
+{"    "}<span className="str">"{lang === "pt" ? "workflows de automação" : "automation workflows"}"</span>{"\n"}
 {"  "}<span className="punc">],</span>{"\n"}
 {"  "}<span className="prop">available</span><span className="punc">:</span> <span className="kw">true</span><span className="punc">,</span>{"\n"}
 {"  "}<span className="prop">remote</span><span className="punc">:</span> <span className="kw">true</span><span className="punc">,</span>{"\n"}

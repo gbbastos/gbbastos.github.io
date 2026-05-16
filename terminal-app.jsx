@@ -403,7 +403,7 @@ function TerminalApp() {
 
       <footer className="foot">
         <div>© {new Date().getFullYear()} Gabriel Bastos</div>
-        <div>{lang === "pt" ? "Construído à mão em React e CSS" : "Hand-built in React and CSS"}</div>
+        <div></div>
         <div>
           <a href={cv.meta.githubUrl} target="_blank" rel="noopener">{cv.meta.github}</a>
           {" · "}

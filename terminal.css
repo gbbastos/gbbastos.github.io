@@ -637,7 +637,7 @@ a { color: inherit; }
 /* fade-in safe for screenshots (no opacity 0 at rest) */
 .view { opacity: 1; }
 
-/* ── responsive ─────────────────────────────────────────────── */
+/* ── responsive: tablet ──────────────────────────────────────── */
 @media (max-width: 880px) {
   .topbar-inner { grid-template-columns: 1fr auto; gap: 12px; padding: 12px 18px; }
   .crumb { display: none; }
@@ -648,7 +648,7 @@ a { color: inherit; }
     padding: 14px 0 18px;
   }
   .sb-foot { display: none; }
-  .main { padding: 36px 20px 80px; }
+  .main { padding: 36px 24px 80px; }
   .hero-stats { grid-template-columns: repeat(2, 1fr); }
   .hero-stats .cell { border-right: 1px solid var(--t-border); border-bottom: 1px solid var(--t-border); }
   .hero-stats .cell:nth-child(2n) { border-right: 0; }
@@ -657,5 +657,101 @@ a { color: inherit; }
   .gh-grid { grid-template-columns: repeat(2, 1fr); }
   .gh-grid .cell { border-right: 1px solid var(--t-border); border-bottom: 1px solid var(--t-border); }
   .gh-grid .cell:nth-child(2n) { border-right: 0; }
-  .foot { grid-template-columns: 1fr; }
+  .foot { grid-template-columns: 1fr; gap: 10px; }
+}
+
+/* ── responsive: phone ───────────────────────────────────────── */
+@media (max-width: 600px) {
+  /* topbar */
+  .topbar-inner { padding: 10px 16px; gap: 8px; }
+  .brand .v { display: none; }
+  .chip { font-size: 10px; padding: 4px 8px; }
+
+  /* sidebar → horizontal scrollable tab strip */
+  .sidebar {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    padding: 0;
+    border-bottom: 1px solid var(--t-border);
+    gap: 0;
+  }
+  .sidebar::-webkit-scrollbar { display: none; }
+  .sb-group {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    flex-shrink: 0;
+  }
+  .sb-group-h { display: none; }
+  .sb-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 14px;
+    border-left: 0;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    min-height: 44px;
+    font-size: 12px;
+  }
+  .sb-item.active {
+    border-left-color: transparent;
+    border-bottom-color: var(--t-accent);
+    background: var(--t-bg-2);
+  }
+  .sb-item .pre { display: none; }
+  .sb-item .ext { display: none; }
+
+  /* main content */
+  .main { padding: 28px 16px 72px; }
+  .breadcrumb { display: none; }
+
+  /* hero */
+  .hero { margin-bottom: 40px; }
+  .hero h1 { font-size: clamp(32px, 9vw, 48px); }
+  .hero .tagline { font-size: 16px; }
+  .hero-links {
+    flex-direction: column;
+    gap: 0;
+  }
+  .hero-links a,
+  .hero-links button {
+    padding: 12px 0;
+    margin-right: 0;
+    border-bottom: 1px solid var(--t-border);
+    font-size: 13px;
+  }
+  .hero-stats { margin-top: 40px; }
+  .hero-stats .cell { padding: 16px 8px; }
+  .hero-stats .v { font-size: 15px; }
+
+  /* sections */
+  .section-title { font-size: clamp(22px, 6vw, 32px); margin-bottom: 20px; }
+  .section-lede { font-size: 15px; }
+  .eyebrow { margin-bottom: 20px; }
+
+  /* experience / project entries */
+  .entry { padding: 20px 0; gap: 8px; }
+  .entry h3 { font-size: 18px; }
+  .entry li { font-size: 13.5px; }
+
+  /* skills grid */
+  .skills-grid { grid-template-columns: 1fr 1fr; }
+  .skill-cell { padding: 14px 14px; }
+
+  /* github */
+  .gh-grid { grid-template-columns: repeat(2, 1fr); }
+  .gh-grid .cell { padding: 14px 10px; }
+  .gh-grid .v { font-size: 22px; }
+  .heat { grid-template-columns: repeat(53, 7px); grid-auto-rows: 7px; gap: 2px; }
+
+  /* code block */
+  .codeblock { font-size: 12px; padding: 16px 14px; }
+
+  /* footer */
+  .foot { padding: 20px 16px 32px; gap: 8px; font-size: 10px; }
 }
