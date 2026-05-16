@@ -34,7 +34,7 @@ function ViewHome({ lang, cv, navigate }) {
   return (
     <div className="view">
       <section className="hero">
-        <div className="marker"><i/><span>{lang === "pt" ? "Backend & Automation Engineer" : "Backend & Automation Engineer"}</span></div>
+        <div className="marker"><i/><span>{lang === "pt" ? "Desenvolvedor Backend & Automação de Sistemas" : "Backend & Automation Engineer"}</span></div>
         <h1>{cv.meta.name}</h1>
         <div className="role">{t(cv.role)}</div>
         <p className="tagline">{t(cv.tagline)}</p>

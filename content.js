@@ -16,7 +16,7 @@ window.CV = {
   },
 
   role: {
-    pt: "Backend Developer & Automation Engineer",
+    pt: "Desenvolvedor Backend & Automação de Sistemas",
     en: "Backend Developer & Automation Engineer",
   },
 
@@ -37,7 +37,7 @@ window.CV = {
 
   experience: [
     {
-      role: { pt: "Backend Developer & Automation Engineer", en: "Backend Developer & Automation Engineer" },
+      role: { pt: "Desenvolvedor Backend & Automação de Sistemas", en: "Backend Developer & Automation Engineer" },
       company: "Iprazos",
       where: { pt: "Rio de Janeiro (Remoto)", en: "Rio de Janeiro (Remote)" },
       period: { pt: "Jan 2025 — Presente", en: "Jan 2025 — Present" },
