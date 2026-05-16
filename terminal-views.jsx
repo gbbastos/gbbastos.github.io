@@ -42,7 +42,7 @@ function ViewHome({ lang, cv, navigate }) {
         <div className="hero-links">
           <button onClick={() => navigate("projects")}><span>{lang === "pt" ? "Ver projetos" : "View projects"}</span><span className="arr">→</span></button>
           <button onClick={() => navigate("experience")}><span>{lang === "pt" ? "Experiência" : "Experience"}</span><span className="arr">→</span></button>
-          <a href={cv.meta.cvFile} target="_blank" rel="noopener"><span>{lang === "pt" ? "Baixar CV" : "Download CV"}</span><span className="arr">↓</span></a>
+          <a href={cv.meta.cvFile[lang]} target="_blank" rel="noopener"><span>{lang === "pt" ? "Baixar CV" : "Download CV"}</span><span className="arr">↓</span></a>
           <a href={`mailto:${cv.meta.email}`}><span>{cv.meta.email}</span><span className="arr">↗</span></a>
         </div>
 

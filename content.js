@@ -12,7 +12,7 @@ window.CV = {
     linkedinUrl: "https://linkedin.com/in/gbbastos",
     location: { pt: "Rio de Janeiro, Brasil", en: "Rio de Janeiro, Brazil" },
     remote: { pt: "Aberto a remoto", en: "Open to remote" },
-    cvFile: "assets/Gabriel_Bernardo_Bastos.pdf",
+    cvFile: { pt: "assets/Gabriel_Bernardo_Bastos_PT.pdf", en: "assets/Gabriel_Bernardo_Bastos_EN.pdf" },
   },
 
   role: {

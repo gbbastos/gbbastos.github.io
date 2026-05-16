@@ -18,9 +18,9 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
     "skills": true,
     "education": true,
     "me": true,
-    "github": true,
+    "github": false,
     "contact": true,
-    "playground": true
+    "playground": false
   }
 }/*EDITMODE-END*/;
 
@@ -85,7 +85,7 @@ function Sidebar({ current, onSelect, lang, sections }) {
           <div>{cv.meta.location[lang]}</div>
           <div>{cv.meta.email}</div>
         </div>
-        <a href={cv.meta.cvFile} target="_blank" rel="noopener">↓ CV.pdf</a>
+        <a href={cv.meta.cvFile[lang]} target="_blank" rel="noopener">↓ CV.pdf</a>
         <a href={cv.meta.githubUrl} target="_blank" rel="noopener">↗ {cv.meta.github}</a>
         <a href={cv.meta.linkedinUrl} target="_blank" rel="noopener">↗ LinkedIn</a>
       </div>
@@ -150,7 +150,7 @@ function makePgCmds({ lang, navigate, setLang, setMode, setAccent }) {
     skills: () => [out(cv.skills.languages.concat(cv.skills.frameworks, cv.skills.databases).join(" · "), "pg-cmd-in")],
     projects: () => cv.projects.map((p) => out(`▸ ${p.name} — ${T(p.summary)}`, "pg-cmd-in")),
     contact: () => [out(cv.meta.email, "pg-cmd-in"), out(cv.meta.phone, "pg-cmd-in"), out(cv.meta.github, "pg-cmd-in"), out(cv.meta.linkedin, "pg-cmd-in")],
-    cv: () => { window.open(cv.meta.cvFile, "_blank"); return [out(lang === "pt" ? "↓ baixando CV.pdf" : "↓ downloading CV.pdf", "pg-warn")]; },
+    cv: () => { window.open(cv.meta.cvFile[lang], "_blank"); return [out(lang === "pt" ? "↓ baixando CV.pdf" : "↓ downloading CV.pdf", "pg-warn")]; },
     lang: (args) => {
       const v = (args[0] || "").toLowerCase();
       if (v === "pt" || v === "en") { setLang(v); return [out(`→ ${v.toUpperCase()}`, "pg-warn")]; }
@@ -382,7 +382,7 @@ function TerminalApp() {
             <span className="chip" onClick={() => setTweak("dark", !t.dark)} title="toggle theme">
               {t.dark ? "Dark" : "Light"}
             </span>
-            <a href={cv.meta.cvFile} target="_blank" rel="noopener" style={{ textDecoration: "none" }}>
+            <a href={cv.meta.cvFile[lang]} target="_blank" rel="noopener" style={{ textDecoration: "none" }}>
               <span className="chip cv">↓ CV</span>
             </a>
           </div>
